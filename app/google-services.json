@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "207337598872",
+    "firebase_url": "https://ecommerce-dea20-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "ecommerce-dea20",
+    "storage_bucket": "ecommerce-dea20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207337598872:android:f7e5dc12c37ad26d7a05ed",
+        "android_client_info": {
+          "package_name": "uz.shop.market"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGJanaoukLvfdtqJkvi9yIYkkes3ypSR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
