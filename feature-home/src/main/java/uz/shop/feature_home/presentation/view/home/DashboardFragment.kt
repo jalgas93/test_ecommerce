@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.lifecycle.VIEW_MODEL_STORE_OWNER_KEY
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
@@ -14,6 +16,7 @@ import uz.shop.feature_home.R
 import uz.shop.feature_home.data.model.sliderModel.SliderModel
 import uz.shop.feature_home.databinding.FragmentDashboardBinding
 import uz.shop.feature_home.domain.navigation.NavigationList
+import uz.shop.feature_home.presentation.adapter.BrandAdapter
 import uz.shop.feature_home.presentation.adapter.SliderAdapter
 import uz.shop.feature_home.presentation.viewmodel.SliderViewModel
 import javax.inject.Inject
@@ -35,6 +38,7 @@ class DashboardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initBanner();
+        initBrand()
     }
 
     private fun initBanner() {
@@ -59,7 +63,19 @@ class DashboardFragment : Fragment() {
 
         binding.viewpagerSlider.setPageTransformer(compositePageTransformer)
         if (images.size > 1) {
-             binding.dotIndicator.attachTo(binding.viewpagerSlider)
+            binding.dotIndicator.attachTo(binding.viewpagerSlider)
         }
+    }
+
+    private fun initBrand() {
+        binding.progressBarBrand.visibility = View.VISIBLE
+        viewModel.brand.observe(requireActivity(), Observer { items ->
+
+            binding.recyclerViewBrand.layoutManager =
+                LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
+            binding.recyclerViewBrand.adapter = BrandAdapter(items)
+            binding.progressBarBrand.visibility = View.GONE
+        })
+        viewModel.loadBrand()
     }
 }
