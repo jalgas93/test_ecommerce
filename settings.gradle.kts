@@ -25,3 +25,4 @@ rootProject.name = "new_market"
 include(":app")
 include(":feature-home")
 include(":core-network")
+include(":feature-detail")

@@ -43,6 +43,7 @@ android {
 
 dependencies {
     implementation(project(path = ":feature-home"))
+    implementation(project(path = ":feature-detail"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

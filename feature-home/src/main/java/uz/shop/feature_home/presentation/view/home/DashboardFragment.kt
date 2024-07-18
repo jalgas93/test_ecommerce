@@ -6,26 +6,29 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import androidx.lifecycle.VIEW_MODEL_STORE_OWNER_KEY
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import dagger.hilt.android.AndroidEntryPoint
-import uz.shop.feature_home.R
 import uz.shop.feature_home.data.model.sliderModel.SliderModel
 import uz.shop.feature_home.databinding.FragmentDashboardBinding
 import uz.shop.feature_home.domain.navigation.NavigationList
 import uz.shop.feature_home.presentation.adapter.BrandAdapter
+import uz.shop.feature_home.presentation.adapter.PopularAdapter
 import uz.shop.feature_home.presentation.adapter.SliderAdapter
 import uz.shop.feature_home.presentation.viewmodel.SliderViewModel
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class DashboardFragment : Fragment() {
-    private val viewModel = SliderViewModel()
+    private var viewModel = SliderViewModel()
     private lateinit var binding: FragmentDashboardBinding
+    private lateinit var adapter: PopularAdapter
 
+    @Inject
+    lateinit var navigation: NavigationList
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,6 +42,7 @@ class DashboardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initBanner();
         initBrand()
+        initPopular()
     }
 
     private fun initBanner() {
@@ -77,5 +81,18 @@ class DashboardFragment : Fragment() {
             binding.progressBarBrand.visibility = View.GONE
         })
         viewModel.loadBrand()
+    }
+
+    private fun initPopular() {
+        binding.progressBarPopular.visibility = View.VISIBLE
+        viewModel.popular.observe(requireActivity(), Observer { items ->
+
+            binding.recyclerViewPopular.layoutManager =
+                GridLayoutManager(requireActivity(), 2)
+            adapter = PopularAdapter(items, navigation)
+            binding.recyclerViewPopular.adapter = adapter
+            binding.progressBarPopular.visibility = View.GONE
+        })
+        viewModel.loadPopular()
     }
 }

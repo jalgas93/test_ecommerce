@@ -8,6 +8,8 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
+import dagger.hilt.components.SingletonComponent
+import uz.shop.feature_detail.domain.navigation.DetailNavigation
 import uz.shop.feature_home.domain.navigation.NavigationList
 
 
@@ -15,7 +17,7 @@ import uz.shop.feature_home.domain.navigation.NavigationList
 @InstallIn(ActivityComponent::class)
 object NavigationModule {
     @Provides
-    fun navController(activity: FragmentActivity): NavController? {
+    fun navController(activity: FragmentActivity): NavController {
         return NavHostFragment.findNavController(activity.supportFragmentManager.findFragmentById(R.id.nav_host_fragment)!!)
 
     }
@@ -24,6 +26,9 @@ object NavigationModule {
     @InstallIn(ActivityComponent::class)
     abstract class NavigationListModule {
         @Binds
-        abstract fun click(navigator: Navigator): NavigationList
+        abstract fun bindDashboard(navigator: Navigator): NavigationList
+
+        @Binds
+        abstract fun bindDetail(navigator: Navigator): DetailNavigation
     }
 }

@@ -44,15 +44,15 @@ class BrandAdapter(val items: MutableList<BrandModel>) :
         holder.binding.title.setTextColor(context.resources.getColor(R.color.white))
         if (selectedPosition == position) {
             holder.binding.pic.setBackgroundResource(0)
-            holder.binding.mainLayout.setBackgroundColor(R.drawable.purple_button_bg)
+            holder.binding.mainLayout.setBackgroundResource(R.drawable.purple_button_bg)
             ImageViewCompat.setImageTintList(
                 holder.binding.pic,
                 ColorStateList.valueOf(context.getColor(R.color.white))
             )
             holder.binding.title.visibility = View.VISIBLE
-        }else{
+        } else {
             holder.binding.pic.setBackgroundResource(R.drawable.grey_bg)
-            holder.binding.mainLayout.setBackgroundColor(0)
+            holder.binding.mainLayout.setBackgroundResource(0)
             ImageViewCompat.setImageTintList(
                 holder.binding.pic,
                 ColorStateList.valueOf(context.getColor(R.color.black))

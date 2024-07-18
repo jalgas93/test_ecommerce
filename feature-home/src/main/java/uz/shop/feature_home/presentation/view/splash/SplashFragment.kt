@@ -9,12 +9,15 @@ import android.view.ViewGroup
 import dagger.hilt.android.AndroidEntryPoint
 import uz.shop.feature_home.databinding.FragmentSplashBinding
 import uz.shop.feature_home.domain.navigation.NavigationList
-
+import uz.shop.feature_home.presentation.adapter.PopularAdapter
 import javax.inject.Inject
+
 @AndroidEntryPoint
 class SplashFragment : Fragment() {
     private lateinit var binding: FragmentSplashBinding
 
+    @Inject
+    lateinit var navigation: NavigationList
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,13 +29,15 @@ class SplashFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.startBtn.setOnClickListener {
-            Log.i("TAG","Jalgas")
-        }
-
+        initial()
     }
 
 
-
+    private fun initial() {
+        binding.startBtn.setOnClickListener {
+            Log.i("TAG", "Jalgas")
+            navigation.openDashboard()
+        }
+    }
 
 }
