@@ -41,21 +41,21 @@ class BrandAdapter(val items: MutableList<BrandModel>) :
             notifyItemChanged(lastSelectedPosition)
             notifyItemChanged(selectedPosition)
         }
-        holder.binding.title.setTextColor(context.resources.getColor(R.color.white))
+        holder.binding.title.setTextColor(context.resources.getColor(uz.shop.assets.R.color.white))
         if (selectedPosition == position) {
             holder.binding.pic.setBackgroundResource(0)
-            holder.binding.mainLayout.setBackgroundResource(R.drawable.purple_button_bg)
+            holder.binding.mainLayout.setBackgroundResource(uz.shop.assets.R.drawable.purple_button_bg)
             ImageViewCompat.setImageTintList(
                 holder.binding.pic,
-                ColorStateList.valueOf(context.getColor(R.color.white))
+                ColorStateList.valueOf(context.getColor(uz.shop.assets.R.color.white))
             )
             holder.binding.title.visibility = View.VISIBLE
         } else {
-            holder.binding.pic.setBackgroundResource(R.drawable.grey_bg)
+            holder.binding.pic.setBackgroundResource(uz.shop.assets.R.drawable.grey_bg)
             holder.binding.mainLayout.setBackgroundResource(0)
             ImageViewCompat.setImageTintList(
                 holder.binding.pic,
-                ColorStateList.valueOf(context.getColor(R.color.black))
+                ColorStateList.valueOf(context.getColor(uz.shop.assets.R.color.black))
             )
             holder.binding.title.visibility = View.GONE
         }

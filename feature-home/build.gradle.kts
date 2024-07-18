@@ -40,6 +40,7 @@ android {
 
 dependencies {
     implementation(project(path = ":core-network"))
+    implementation(project(path = ":assets"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

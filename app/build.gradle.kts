@@ -44,6 +44,7 @@ android {
 dependencies {
     implementation(project(path = ":feature-home"))
     implementation(project(path = ":feature-detail"))
+    implementation(project(path = ":feature-cart"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

@@ -6,4 +6,6 @@ interface NavigationList {
     fun openDetail(model: ItemsModel)
 
     fun openDashboard()
+
+    fun openCart()
 }

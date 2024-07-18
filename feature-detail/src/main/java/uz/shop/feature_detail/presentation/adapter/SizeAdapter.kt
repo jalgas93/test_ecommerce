@@ -40,11 +40,11 @@ class SizeAdapter(val items: MutableList<String>) :
             notifyItemChanged(selectedPosition)
         }
         if (selectedPosition == position) {
-            holder.binding.sizelayout.setBackgroundResource(R.drawable.grey_bg_selected)
-            holder.binding.sizeTxt.setTextColor(context.resources.getColor(R.color.purple))
+            holder.binding.sizelayout.setBackgroundResource(uz.shop.assets.R.drawable.grey_selected_bg)
+            holder.binding.sizeTxt.setTextColor(context.resources.getColor(uz.shop.assets.R.color.purple))
         } else {
-            holder.binding.sizelayout.setBackgroundResource(R.drawable.grey_bg)
-            holder.binding.sizeTxt.setTextColor(context.resources.getColor(R.color.black))
+            holder.binding.sizelayout.setBackgroundResource(uz.shop.assets.R.drawable.grey_bg)
+            holder.binding.sizeTxt.setTextColor(context.resources.getColor(uz.shop.assets.R.color.black))
         }
     }
 

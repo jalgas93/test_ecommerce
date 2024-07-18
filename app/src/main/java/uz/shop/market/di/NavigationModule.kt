@@ -8,7 +8,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
-import dagger.hilt.components.SingletonComponent
+import uz.shop.feature_cart.domain.navigation.CartNavigation
 import uz.shop.feature_detail.domain.navigation.DetailNavigation
 import uz.shop.feature_home.domain.navigation.NavigationList
 
@@ -30,5 +30,10 @@ object NavigationModule {
 
         @Binds
         abstract fun bindDetail(navigator: Navigator): DetailNavigation
+
+        @Binds
+        abstract fun bindCart(navigator: Navigator): CartNavigation
+
+
     }
 }

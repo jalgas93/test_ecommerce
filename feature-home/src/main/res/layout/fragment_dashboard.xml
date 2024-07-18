@@ -36,14 +36,14 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/plus_cart_btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Welcome Back"
                         android:textColor="@color/grey" />
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/minus_cart_btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Jammie"
@@ -125,7 +125,7 @@
 
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -247,6 +247,7 @@
                 android:layout_height="match_parent">
 
                 <LinearLayout
+                    android:id="@+id/home"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
@@ -272,6 +273,7 @@
                         />
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/cartBtn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
@@ -297,6 +299,7 @@
                         />
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/wishlist"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
@@ -322,6 +325,7 @@
                         />
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/myOrder"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
@@ -347,6 +351,7 @@
                         />
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/myProfile"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"

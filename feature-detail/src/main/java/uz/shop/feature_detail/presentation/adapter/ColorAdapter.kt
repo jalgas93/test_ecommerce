@@ -39,9 +39,9 @@ class ColorAdapter(val items: MutableList<String>) :
             notifyItemChanged(selectedPosition)
         }
         if (selectedPosition == position) {
-            holder.binding.colorLayout.setBackgroundResource(R.drawable.grey_bg_selected)
+            holder.binding.colorLayout.setBackgroundResource(uz.shop.assets.R.drawable.grey_selected_bg)
         }else{
-            holder.binding.colorLayout.setBackgroundResource(R.drawable.grey_bg)
+            holder.binding.colorLayout.setBackgroundResource(uz.shop.assets.R.drawable.grey_bg)
         }
     }
 
